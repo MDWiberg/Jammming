@@ -89,13 +89,11 @@ export class App extends React.Component {
   // Method returns tracks based on the seach term you entered
   search(searchTerm){
     let thisApp = this;
-    // console.log(Spotify.search(searchTerm));
+
     // Calls the search method from the module Spotify
     Spotify.search(searchTerm)
     // Consume returned promise and update state to the returned search results array
     .then(searchResultsArr => {
-      console.log(searchTerm);
-      console.log(searchResultsArr);
       thisApp.setState({
         searchResults: searchResultsArr
       });
@@ -111,7 +109,7 @@ export class App extends React.Component {
     Spotify.getUserPlaylists()
     // Consume returned promise and update state to the returned user playlists array
     .then(userPlaylistsArr => {
-      console.log(userPlaylistsArr);
+
       thisApp.setState({
         userPlaylists: userPlaylistsArr
       });
@@ -126,7 +124,7 @@ export class App extends React.Component {
     Spotify.displayPlaylistTracks(playlistID)
     // Consume returned promise and update state to the returned tracks array
     .then(userPlaylistTracks => {
-      console.log(userPlaylistTracks);
+
       thisApp.setState({
         userPlaylists: userPlaylistTracks
       });

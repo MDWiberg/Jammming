@@ -38,20 +38,14 @@ export const Spotify = {
 
   // Method to return tracks based on the input search term
   search(searchTerm){
-    // this.getAccessToken();
-    console.log(userAccessToken);
     return fetch(
       `https://api.spotify.com/v1/search?type=track&q=${searchTerm}`, 
       { headers: {Authorization: `Bearer ${userAccessToken}`}}
     )
-    .then((response) => {
-      console.log(response);
-      
+    .then((response) => {  
       return response.json();
     })
     .then((jsonResponse) => {
-      console.log(jsonResponse);
-
       // If the response does not have any tracks, returns an empty array
       if(jsonResponse.tracks.items.length === 0){
         return [];
@@ -145,11 +139,9 @@ export const Spotify = {
     // Request to fetch the user's current playlists
     return fetch('https://api.spotify.com/v1/me/playlists', {headers: header})
     .then((response) =>{
-      console.log(response);
       return response.json();
     })
     .then((jsonResponse) => {
-      console.log(jsonResponse);
       // If the response does not have any playlists, returns an empty array
       if(jsonResponse.items.length === 0){
         return [];
@@ -176,11 +168,9 @@ export const Spotify = {
     // Request returns the playlist correlated with the input playlist_id
     return fetch(`https://api.spotify.com/v1/playlists/${playlistID}`, {headers: header})
     .then((response) =>{
-      console.log(response);
       return response.json();
     })
     .then((jsonResponse) => {
-      console.log(jsonResponse);
       // If the response does not have any playlists, returns an empty array
       if(jsonResponse.tracks.items.length === 0){
         return [];
