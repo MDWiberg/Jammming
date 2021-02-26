@@ -1,7 +1,7 @@
 let clientID = "dfa82bf929464e3e85570dde101150db";
 let redirectURI = "http://spotify-playlist-creator.surge.sh";
 // For use with localhosting
-let redirectURI2 = "http://localhost:3000/";
+// let redirectURI2 = "http://localhost:3000/";
 
 let userAccessToken;
 
